@@ -2,8 +2,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import Header from "@/components/ui/Header";
-const inter = Inter({ subsets: ["latin"]});
-  
+import { neobrutalism } from "@clerk/themes";
+const inter = Inter({ subsets: ["latin"] });
+
 
 export const metadata = {
   title: "cokelp",
@@ -12,22 +13,20 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider>
-    <html
-      lang="en" suppressHydrationWarning>
-      
-    
-      <body className={`${inter.className}`} >
-        <Header/>
-        <main className="min-h-screen bg-stone-50">{children}</main>
-        <footer className="border-t border-border py-8 px-4">
-          <div className="max-w-6xl mx-auto flex just
+    <ClerkProvider appearance={{baseTheme: neobrutalism}}>
+      <html
+        lang="en" suppressHydrationWarning>
+        <body className={`${inter.className}`} >
+          <Header />
+          <main className="min-h-screen bg-stone-50">{children}</main>
+          <footer className="border-t border-border py-8 px-4">
+            {/* <div className="max-w-6xl mx-auto flex just
           item-center">
-            <p className="text-stone-500 text-lg">rvkovo'rojkvov</p>
-          </div>
-        </footer>
-        {children}</body>
-    </html>
+              <p className="text-stone-500 text-lg">rvkovo'rojkvov</p>
+            </div> */}
+          </footer>
+          {children}</body>
+      </html>
     </ClerkProvider>
   );
 }                           
