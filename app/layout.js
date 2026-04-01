@@ -1,8 +1,12 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+
+import Header from "../components/ui/Header.jsx";
+
+
 import { ClerkProvider } from "@clerk/nextjs";
-import Header from "@/components/ui/Header";
 import { neobrutalism } from "@clerk/themes";
+
 const inter = Inter({ subsets: ["latin"] });
 
 
@@ -25,7 +29,7 @@ export default function RootLayout({ children }) {
               <p className="text-stone-500 text-lg">rvkovo'rojkvov</p>
             </div> */}
           </footer>
-          {children}</body>
+          </body>
       </html>
     </ClerkProvider>
   );
